@@ -1,0 +1,173 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+html,
+body {
+    display: grid;
+    height: 100%;
+    place-items: center;
+    background: #222327;
+    overflow-x: hidden;
+}
+
+.wrapper {
+    position: relative;
+    height: 80px;
+    width: 620px;
+    background-color: #ecf0f1;
+    border-radius: 17px;
+    box-shadow: 3px 7px 2px rgba(0, 0, 0, 0.1);
+}
+
+.wrapper ul {
+    display: flex;
+    justify-content: space-between;
+}
+
+.wrapper ul li {
+    position: relative;
+    list-style: none;
+    line-height: 85px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.tooltip {
+    position: absolute;
+    left: 0;
+    top: -20px;
+    height: 40px;
+    width: 100px;
+    background: #29fd53;
+    border-radius: 15px;
+    text-align: center;
+    line-height: 30px;
+    font-size: 14px;
+    color: #000;
+    font-weight: 500;
+    pointer-events: none;
+    margin: 0 10px;
+    transition: 0.5s;
+    border: 6px solid #000;
+    opacity: 0;
+}
+
+.tooltip::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: -22px;
+    width: 20px;
+    height: 20px;
+    background: transparent;
+    border-top-right-radius: 20px;
+    box-shadow: 0 -10px 0 0 #222327;
+}
+
+.tooltip::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    right: -22px;
+    width: 20px;
+    height: 20px;
+    background: transparent;
+    border-top-left-radius: 20px;
+    box-shadow: 0 -10px 0 0 #222327;
+}
+
+.wrapper ul li:hover .tooltip {
+    transition: all 0.3s ease;
+    opacity: 1;
+}
+
+.wrapper ul li a {
+    display: block;
+    color: #000;
+    font-size: 1.5em;
+    margin: 0 50px;
+}
+
+
+@media (max-width: 768px) {
+    .wrapper {
+        height: 60px;
+        width: 465px;
+        border-radius: 12.75px;
+        box-shadow: 2.25px 5.25px 1.5px rgba(0, 0, 0, 0.1);
+    }
+
+    .wrapper ul li {
+        line-height: 65px;
+    }
+
+    .wrapper ul {
+        padding: 0;
+    }
+
+    .wrapper ul li a {
+        font-size: 1.125em;
+        margin: 0 37.5px;
+    }
+
+    .tooltip {
+        height: 30px;
+        width: 75px;
+        line-height: 22.5px;
+        font-size: 10.5px;
+        margin: 0 7.5px;
+        border: 4.5px solid #000;
+    }
+
+    .tooltip::before,
+    .tooltip::after {
+        opacity: 0;
+    }
+}
+
+
+@media (max-width: 480px) {
+    .wrapper {
+        height: 48px;
+        width: 372px;
+        border-radius: 10.2px;
+        box-shadow: 1.8px 4.2px 1.2px rgba(0, 0, 0, 0.1);
+    }
+
+    .wrapper ul li a {
+        font-size: 0.9em;
+        margin: 0 30px;
+    }
+
+    .wrapper ul {
+        padding: 0;
+    }
+
+    .wrapper ul li {
+        line-height: 52px;
+    }
+
+    .tooltip {
+        height: 24px;
+        width: 60px;
+        top: -15px;
+        line-height: 18px;
+        font-size: 8.4px;
+        border: 3.6px solid #000;
+    }
+
+    .tooltip::before,
+    .tooltip::after {
+        opacity: 0;
+    }
+}
+
